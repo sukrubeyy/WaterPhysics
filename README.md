@@ -13,15 +13,12 @@ public class Swimmer : MonoBehaviour
     public float displacementAmount = 3f;
     public float depthBeforeSubMerged = 1f;
     public Rigidbody rb;
-
     public int swimSystemCount = 1;
     public float waterDrag = 0.99f;
     public float waterAngularDrag = 0.5f;
-
     void FixedUpdate()
     {
         rb.AddForceAtPosition(Physics.gravity / swimSystemCount, transform.position, ForceMode.Acceleration);
-        
         float waveHeight = WaveManager.singleton.GetWaveHeight(transform.position.x);
         if (transform.position.y < waveHeight)
         {

@@ -71,7 +71,9 @@ using UnityEngine;
 public class WaterManager : MonoBehaviour
 {
     private MeshFilter _mesh;
+    
     void Awake() =>        _mesh = GetComponent<MeshFilter>();
+    
     private void Update()
     {
         Vector3[] vertices = _mesh.mesh.vertices;
@@ -82,6 +84,7 @@ public class WaterManager : MonoBehaviour
         _mesh.mesh.vertices = vertices;
         _mesh.mesh.RecalculateNormals();
     }
+    
 }
 <code>
 </code>

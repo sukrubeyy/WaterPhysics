@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class WaveManager : MonoBehaviour
 {
     public float speed = 1f;
@@ -20,13 +17,6 @@ public class WaveManager : MonoBehaviour
             Destroy(this);
         }
     }
-
-    private void Update()
-    {
-        offset += Time.deltaTime * speed;
-    }
-    public float GetWaveHeight(float _x)
-    {
-        return amplitude * Mathf.Sin(_x / length + offset);
-    }
+    private void Update() => offset += Time.deltaTime * speed;
+    public float GetWaveHeight(float _x) => amplitude * Mathf.Sin(_x / length + offset);
 }
